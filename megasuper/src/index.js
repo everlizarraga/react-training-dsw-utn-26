@@ -4,10 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import Bienvenida from './Bienvenida';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
+//<App />
 root.render(
   <React.StrictMode>
-    <App />
+    <Bienvenida persona={"Ever"}></Bienvenida>
+    <Bienvenida persona={"Lizarraga"} />
   </React.StrictMode>
 );
 

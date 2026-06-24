@@ -70,8 +70,21 @@ Desarmemos el comando, porque cada parte tiene su porqué:
 Este comando tarda un rato (un par de minutos): está creando archivos **y además descargando React y todas sus piezas de internet.** Cuando termina, tenés una carpeta `megasuper` con un proyecto de React funcional adentro.
 
 > 🕳️ **Madriguera — Create React App está discontinuado; hoy se usa Vite**
-> Create React App es la herramienta con la que está hecho el proyecto que vamos a estudiar, así que es la que usamos. Pero te lo digo derecho: el equipo de React la dejó de mantener, y la herramienta moderna para crear proyectos nuevos se llama **Vite** (el comando equivalente es `npm create vite@latest`). Vite es más rápida arrancando. La estructura y los conceptos que vas a aprender acá valen igual con Vite; cambian detalles del armado, no el React de adentro.
-> *Volvé al camino — seguimos con Create React App porque es lo que usa nuestro proyecto.*
+> Create React App es la herramienta con la que está hecho el proyecto que vamos a estudiar, así que es la que usamos. Pero te lo digo derecho: el **14 de febrero de 2025 el equipo de React deprecó oficialmente CRA**. Ya no se recomienda para proyectos nuevos; quedó en "modo mantenimiento". La herramienta moderna para crear una SPA como la nuestra se llama **Vite** (más rápida porque no usa Webpack). Si algún día querés armar un proyecto nuevo, el equivalente sería:
+>
+> ```bash
+> npm create vite@latest mi-app -- --template react   # crear
+> cd mi-app
+> npm install                                          # instalar dependencias
+> npm run dev                                           # levantar (en vez de npm start)
+> ```
+>
+> Las **únicas** diferencias prácticas con CRA que vas a notar: se levanta con `npm run dev` (no `npm start`), el puerto por defecto es `5173` (no `3000`), el punto de entrada se llama `main.jsx` (no `index.js`), y Vite **no** te trae las dependencias instaladas hasta que corrés `npm install`. **Todo lo demás del recorrido —componentes, props, estado, hooks, routing, todo— es exactamente igual con Vite.** El React de adentro no cambia; cambia solo el andamio que lo arma.
+> *Volvé al camino — seguimos con Create React App porque es lo que usa nuestro proyecto. Si querés el panorama de CRA vs Vite vs Next.js en su lugar, está el anexo del ecosistema.*
+
+> 🕳️ **Madriguera — ¿no había que hacer `npm init` antes?**
+> No, y es una confusión común. `npm init -y` crea **solo** un `package.json` casi vacío, para arrancar un proyecto **a mano**. `create-react-app` ya hace ese `init` por vos y mucho más: te genera el `package.json` **ya armado** (con React y los scripts), más toda la estructura. Si corrieras `npm init` antes, ese `package.json` lo terminaría reemplazando `create-react-app` — trabajo al pedo. Regla: **`npm init`** = proyecto a mano desde cero; **`create-react-app`** = proyecto llave en mano (te arma todo, incluido el `package.json`). Y por eso al clonar un repo corrés `npm install` (el `package.json` ya existe), no `npm init`.
+> *Volvé al camino — con `create-react-app` solo, alcanza.*
 
 ---
 
